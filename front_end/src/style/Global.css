@@ -1,0 +1,13 @@
+/* 侧边导航栏样式 */
+
+.el-menu-vertical-demo {
+  text-align: left;
+}
+
+.el-submenu .el-menu.el-menu--inline {
+  padding-left: 10px;
+}
+
+.el-submenu .el-menu-item {
+  min-width: 100px;
+}

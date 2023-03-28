@@ -1,0 +1,37 @@
+summary: 管理员登录接口
+tags:
+  - 管理员功能接口
+parameters:
+  - name: param_body
+    in: body
+    required: true
+    schema:
+      properties:
+        username:
+          type: string
+        password:
+          type: string
+responses:
+  200:
+    description: 管理员登录成功
+    schema:
+      properties:
+        data:
+          properties:
+            name:
+              type: string
+            company:
+              type: string
+            title:
+              type: string
+            token:
+              type: string
+        message:
+          type: string
+  801:
+    description: 用户名或密码错误
+  802:
+    description: 当前用户未激活
+  803:
+    description: 当前用户无权限
+

@@ -1,0 +1,121 @@
+.homepage_framework {
+  width: 1200px;
+  margin: 150px auto auto auto;
+  position: relative;
+}
+
+.el-input-group__append button.el-button,
+.el-input-group__prepend button.el-button,
+.questionnaire_framework .evaluation_toolkits {
+  background-color: #409EFF;
+  border-color: #409EFF;
+  color: #FFF;
+}
+
+.el-input-group__append button.el-button:hover,
+.el-input-group__prepend button.el-button:hover,
+.el-input-group__append button.el-button:focus,
+.el-input-group__prepend button.el-button:focus {
+  background: #66b1ff;
+  border-color: #66b1ff;
+  color: #FFF;
+}
+
+.el-input-group__append button.el-button:is-active,
+.el-input-group__prepend button.el-button:is-active,
+.el-input-group__append button.el-button:active,
+.el-input-group__prepend button.el-button:active {
+  background: #3a8ee6;
+  border-color: #3a8ee6;
+  color: #FFF;
+}
+
+.homepage_framework .loginDetailLayout {
+  border-radius: 4px;
+  border-width: 2px;
+  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1)
+}
+
+.homepage_framework .navigationLayout,
+.homepage_framework .loginLayout,
+.homepage_framework .loginLayout {
+  height: 660px;
+}
+
+.homepage_framework .navigationFormLayout,
+.homepage_framework .navigationAdminLayout {
+  width: 700px;
+}
+
+.homepage_framework .navigationFormLayout button {
+  padding: 0 0 0 0
+}
+
+.homepage_framework .navigationFormLayout p {
+  color: #333;
+  position: absolute;
+  top: 110px;
+  left: 620px;
+  font-size: 24px;
+  margin: 10px auto 10px auto;
+}
+
+.homepage_framework .navigationFormLayout i {
+  position: absolute;
+  top: 150px;
+  left: 666px;
+  font-size: 28px;
+  margin: 10px auto 10px auto;
+}
+
+.homepage_framework .navigationAdminLayout p {
+  color: #333;
+  position: absolute;
+  top: 430px;
+  left: 450px;
+  font-size: 24px;
+  margin: 10px auto 10px auto;
+}
+
+.homepage_framework .navigationAdminLayout i {
+  position: absolute;
+  top: 470px;
+  left: 496px;
+  font-size: 28px;
+  margin: 10px auto 10px auto;
+}
+
+.homepage_framework .messageLayout {
+  margin-bottom: 0;
+}
+
+.homepage_framework .messageLayout .messageHeader {
+  width: 70px;
+  color: rgb(0, 49, 185);
+  font-weight: bold;
+  border-bottom: 1px solid #333;
+}
+
+.homepage_framework .messageLayout ul {
+  list-style: none;
+  text-align: left;
+  padding-left: 0px;
+}
+
+i.bluesquare {
+  background: rgb(0, 119, 255);
+  width: 14px;
+  height: 14px;
+  margin-right: 6px;
+  display: inline-block;
+}
+
+.homepage_framework .messageLayout li {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.homepage_framework .messageLayout a {
+  text-decoration: none;
+  color: #333;
+}

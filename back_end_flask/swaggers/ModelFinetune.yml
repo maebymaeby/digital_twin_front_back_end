@@ -1,0 +1,52 @@
+summary: 数据驱动模型增量学习接口
+tags:
+  - 模型功能接口
+parameters:
+  - name: param_body
+    in: body
+    required: true
+    schema:
+      properties:
+        id:
+          type: string
+        input_data:
+          type: string
+        output_data:
+          type: string
+responses:
+  200:
+    description: 模型增量学习成功
+    schema:
+      properties:
+        data:
+          properties:
+            model_result:
+              properties:
+          properties:
+            model_result:
+              properties:
+                truth:
+                  type: object
+                pred:
+                  type: object
+                r2:
+                  type: object
+                std:
+                  type: object
+                mae:
+                  type: object
+                rmse:
+                  type: object
+        message:
+        message:
+          type: string
+  701:
+    description: 模型增量学习失败
+  702:
+    description: 当前数据不需要增量学习
+  804:
+    description: 用户认证请求头缺失
+  805:
+    description: 当前用户登录已过期
+
+

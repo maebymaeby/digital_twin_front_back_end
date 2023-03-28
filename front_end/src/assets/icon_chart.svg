@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="48px" height="46px" viewBox="0 0 48 46" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 61 (89581) - https://sketch.com -->
+    <title>数据管理</title>
+    <desc>Created with Sketch.</desc>
+    <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="-1-操作台-总览⻚面" transform="translate(-377.000000, -276.000000)">
+            <g id="数据管理" transform="translate(377.000000, 276.000000)">
+                <g>
+                    <rect id="矩形" fill="#000000" x="9" y="45" width="30" height="1"></rect>
+                    <rect id="矩形" stroke="#000000" x="0.5" y="0.5" width="47" height="38"></rect>
+                    <line x1="13.2193266" y1="24.536561" x2="19.4595392" y2="17.1606826" id="路径-2" stroke="#000000"></line>
+                    <line x1="29" y1="21.0638176" x2="35" y2="14" id="路径-2备份" stroke="#000000"></line>
+                    <line x1="23" y1="22" x2="26" y2="17" id="路径-2备份" stroke="#000000" transform="translate(24.500000, 19.687939) scale(-1, 1) translate(-24.500000, -19.687939) "></line>
+                    <circle id="椭圆形" fill="#09BFE5" cx="11.5" cy="26.5" r="3.5"></circle>
+                    <circle id="椭圆形备份-10" fill="#09BFE5" cx="21.5" cy="14.5" r="3.5"></circle>
+                    <circle id="椭圆形备份-11" fill="#09BFE5" cx="27.5" cy="23.5" r="3.5"></circle>
+                    <circle id="椭圆形备份-12" fill="#09BFE5" cx="36.5" cy="11.5" r="3.5"></circle>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

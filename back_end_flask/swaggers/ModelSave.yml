@@ -1,0 +1,28 @@
+summary: 模型保存接口
+tags:
+  - 模型功能接口
+parameters:
+  - name: param_body
+    in: body
+    required: true
+    schema:
+      properties:
+        save_model_flag:
+          type: boolean
+        model_id:
+          type: string
+        model_name:
+          type: string
+        model_description:
+          type: string
+responses:
+  200:
+    description: 模型保存成功
+    schema:
+      properties:
+        message:
+          type: string
+  804:
+    description: 用户认证请求头缺失
+  805:
+    description: 当前用户登录已过期

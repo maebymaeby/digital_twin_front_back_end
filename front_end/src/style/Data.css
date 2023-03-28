@@ -1,0 +1,22 @@
+/* data.vue */
+
+.routerview_scrollbar {
+  height: 100%;
+}
+
+.routerview_scrollbar .el-scrollbar__wrap {
+  overflow-x: hidden;
+  /* overflow: auto; */
+}
+
+.el-select {
+  width: 100%;
+}
+
+.search_autocomplete {
+  width: 100%;
+}
+
+.el-autocomplete {
+  width: 100%;
+}
