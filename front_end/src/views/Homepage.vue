@@ -44,18 +44,6 @@
         </el-col>
       </el-col>
     </el-col>
-    <el-col :offset="2" :span="22" class="messageLayout">
-      <el-col :span="2" class="messageHeader">
-        <p>系统使用说明</p>
-      </el-col>
-      <el-col :span="24">
-        <ul>
-          <li v-for="message in messageList" :key="message.index">
-            <router-link :to="message.url"><i class="bluesquare"></i> {{ message.title }}</router-link>
-          </li>
-        </ul>
-      </el-col>
-    </el-col>
   </el-row>
 </template>
 
@@ -67,12 +55,8 @@
     name: "Homepage",
     data() {
       return {
-        userImage: require("../assets/homepage-user.png"), // 填报段入口图片
-        adminImage: require("../assets/homepage-admin.png"), // 管理端入口图片
-        messageList: [
-          { index: 0, title: "冷端系统数字孪生模型库操作手册", url: "" },
-          { index: 1, title: "冷端系统数字孪生模型库培训视频", url: "" },
-        ],
+        userImage: require("@/assets/homepage-user.png"), // 填报段入口图片
+        adminImage: require("@/assets/homepage-admin.png"), // 管理端入口图片
         isLogin: false, // 是否已进入登录框flag
         gotoView: "", // 登录后前往的页面
         loginForm: {}, // 登录表单

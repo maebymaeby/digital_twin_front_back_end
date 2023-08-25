@@ -26,6 +26,8 @@ responses:
               type: string
             phone:
               type: string
+            phone:
+              type: integer
         message:
           type: string
   804:

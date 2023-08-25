@@ -193,7 +193,7 @@
             enabled: true,
             formatter: function () {
               return '<span style="color: ' + this.point.color + '">\u25CF</span> ' +
-                '<p">' + "数值： " + '<b>' + this.point.y.toFixed(4) + '</b>'
+                '<p>' + this.series.name + ": " + '</p>' + '<b>' + this.point.y.toFixed(4) + '</b>'
             }
           },
 

@@ -253,7 +253,6 @@
           this.isPredicting = true;
           if (this.model_type_clicked.indexOf('GA') != -1 || this.model_type_clicked.indexOf('PSO') != -1) {
             this.getMechanismParam(this.requestData.id).then(() => {
-              console.log(this.requestData)
               return new Promise((resolve, reject) => {
                 STORE
                   .dispatch("Model/mechanismModelPredict", this.requestData)

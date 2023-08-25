@@ -28,8 +28,11 @@ class AdminModel(Resource):
     @swag_from('../swaggers/AdminModelPost.yml')
     def post(self):
         requestData = request.get_json()
-        responseBody = admin_api.getModelListByFilter(requestData)
-        return responseBody
+        responseData = admin_api.getModelListByFilter(requestData)
+        for resData in responseData['data']:
+            if(resData.get('create_time')):
+                resData['create_time'] = resData['create_time'].strftime('%Y-%m-%d %H:%M:%S')
+        return responseData
 api.add_resource(AdminModel, '/getModelList')
 
 

@@ -38,11 +38,11 @@
     </el-col>
     <!--  修改用户信息  -->
     <el-dialog title="修改用户信息" :visible.sync="infoEditorVisible" :append-to-body="true" width="500px">
-      <el-form :model="userInfoForm" label-position="left" label-width="80px" style="margin: 0 20px;">
+      <el-form :model="userInfoForm" :rules="infoRules" label-position="left" label-width="80px" style="margin: 0 20px;">
         <el-form-item label="账号">
           <el-input v-model="userInfoForm.username" :disabled="true"></el-input>
         </el-form-item>
-        <el-form-item label="密码">
+        <el-form-item label="密码" prop="password">
           <el-input v-model="userInfoForm.password" show-password></el-input>
         </el-form-item>
         <el-form-item label="真实姓名">
@@ -54,13 +54,12 @@
         <el-form-item label="用户职称">
           <el-input v-model="userInfoForm.title" :disabled="true"></el-input>
         </el-form-item>
-        <el-form-item label="邮箱">
+        <el-form-item label="邮箱" prop="email">
           <el-input v-model="userInfoForm.email"></el-input>
         </el-form-item>
-        <el-form-item label="手机号">
+        <el-form-item label="手机号" prop="phone">
           <el-input v-model="userInfoForm.phone"></el-input>
         </el-form-item>
-
       </el-form>
       <div slot="footer" class="dialog-footer">
         <el-button @click="infoEditorVisible = false">取消</el-button>
@@ -127,6 +126,31 @@
           title: '',
           phone: '',
           email: '',
+        },
+        infoRules: {
+          password: [{
+            required: true,
+            message: "密码为空",
+            trigger: "blur",
+          }, ],
+          email: [{
+            required: true,
+            message: "邮箱为空",
+            trigger: "blur",
+          }, {
+            pattern: this.GLOBAL.isEmail,
+            message: "邮箱格式有误",
+            trigger: "blur",
+          }, ],
+          phone: [{
+            required: true,
+            message: "手机号为空",
+            trigger: "blur",
+          }, {
+            pattern: this.GLOBAL.isPhone,
+            message: "手机号格式有误",
+            trigger: "blur",
+          }, ],
         },
         infoEditorVisible: false,
         // 头像照片彩蛋

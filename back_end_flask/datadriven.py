@@ -79,6 +79,7 @@ def train(model_type, input_data, output_data, model_path, scaler_path):  # цибх
     train_X, test_X, train_y, test_y = X[:int(len(X) * train_per)], X[int(len(X) * train_per):], Y[:int(len(X) * train_per)], Y[int(len(X) * train_per):]
     train_X, train_y = sklearn.utils.shuffle(train_X, train_y)
     train_X = scaler.fit_transform(train_X)
+    print(scaler_path)
     joblib.dump(scaler, scaler_path)
     test_X = scaler.transform(test_X)
     if train_y.shape[1] == 1:

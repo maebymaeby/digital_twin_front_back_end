@@ -58,6 +58,7 @@ def getUserInfo():
     response_data['data']['company'] = user_info_dict_list[0]['company']
     response_data['data']['phone'] = user_info_dict_list[0]['phone']
     response_data['data']['email'] = user_info_dict_list[0]['email']
+    response_data['data']['access'] = user_info_dict_list[0]['access']
     response_data['data']['photo'] = user_info_dict_list[0]['photo']
     response_data['message'] = '用户信息获取成功'
     return response_data

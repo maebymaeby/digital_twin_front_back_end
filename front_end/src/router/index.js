@@ -1,14 +1,12 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-// import store from '../store'
-// import { Message } from 'element-ui';
-// import backgroundimg from "@/assets/homepage-background.jpg";
+import { Message } from 'element-ui';
 import backgroundimg from "@/assets/homepage-background.png";
-// import GLOBAL from '@/utils/global.js'
+import STORE from '@/store'
 
 Vue.use(Router)
 
-/* let common = {
+let common = {
   quitCurrentUser: function () {
     Message({
       message: "当前账户无权访问该页面，请重新登录",
@@ -17,16 +15,9 @@ Vue.use(Router)
     sessionStorage.removeItem("token");
     sessionStorage.removeItem("profile");
   },
-  alertAuthorization: function () {
-    Message({
-      message: "当前账户无权访问该页面",
-      type: "error",
-    });
-  }
-} */
+}
 
 const router = new Router({
-  // mode: 'hash',
   mode: 'history',
   base: process.env.BASE_URL,
   routes: [
@@ -75,7 +66,21 @@ const router = new Router({
       {
         path: '/UserInfo',
         component: () => import('@/components/User/UserInfo.vue'),
-      }, ]
+      }, ],
+      beforeEnter: (to, from, next) => {
+        STORE.dispatch("User/getUserInfo")
+          .then((res) => {
+            switch (res.data.data.access) {
+            case 0:
+              common.quitCurrentUser();
+              next("/")
+              break;
+            default:
+              next();
+              break;
+            }
+          });
+      }
     },
 
     // 管理员页面
@@ -96,7 +101,21 @@ const router = new Router({
         path: '/PostBulletin',
         component: () => import('@/components/Admin/PostBulletin.vue'),
       }, ],
-    }
+      beforeEnter: (to, from, next) => {
+        STORE.dispatch("User/getUserInfo")
+          .then((res) => {
+            switch (res.data.data.access) {
+            case 1:
+              common.quitCurrentUser();
+              next("/")
+              break;
+            default:
+              next();
+              break;
+            }
+          });
+      }
+    },
   ]
 })
 

@@ -189,6 +189,23 @@
       this.getUserList();
     },
     methods: {
+      // 深拷贝
+      deepClone(obj) {
+        let objClone = Array.isArray(obj) ? [] : {};
+        if (obj && typeof obj === "object") {
+          let key = '';
+          for (key in obj) {
+            if (Object.prototype.hasOwnProperty.call(obj, key)) {
+              if (obj[key] && typeof obj[key] === "object") {
+                objClone[key] = this.deepClone(obj[key]);
+              } else {
+                objClone[key] = obj[key];
+              }
+            }
+          }
+        }
+        return objClone;
+      },
       // 获取用户列表
       getUserList() {
         return new Promise((resolve, reject) => {
@@ -203,7 +220,6 @@
             });
         });
       },
-
       // 注册或修改用户
       toRegisterOrUpdateUser(mode, user) {
         this.isRegisterOrModifyDialogVisible = true;
@@ -212,7 +228,7 @@
           this.userInfo = this.userInfoBack;
         } else {
           this.isRegisterUser = false;
-          this.userInfo = user;
+          this.userInfo = this.deepClone(user);
         }
       },
 
@@ -305,7 +321,31 @@
 
       // 关闭dialog
       closeDialog() {
-        this.userInfoBack = this.userInfo
+        if (this.isRegisterUser == true) {
+          this.userInfoBack = this.userInfo
+        }
+        else {
+          this.userInfo = {
+            username: "",
+            password: "",
+            name: "",
+            company: "",
+            title: "",
+            email: "",
+            access: "",
+            available: 1,
+          };
+          this.userInfoBack = {
+            username: "",
+            password: "",
+            name: "",
+            company: "",
+            title: "",
+            email: "",
+            access: "",
+            available: 1,
+          };
+        }
       },
     },
   };
